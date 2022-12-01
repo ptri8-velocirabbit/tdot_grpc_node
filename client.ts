@@ -85,7 +85,6 @@ function onClientReady() {
         message: line
       })
     }
-
   })
 }
 
