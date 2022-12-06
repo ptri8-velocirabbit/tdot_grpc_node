@@ -1,2 +1,5 @@
 node_modules
 minikube-darwin-amd64
+minikube-darwin-arm64
+kubectl.sha256
+kubectl
