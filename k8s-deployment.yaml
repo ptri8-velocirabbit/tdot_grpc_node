@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-grpc-deployment
+  labels:
+    app: hello-grpc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-grpc
+  template:
+    metadata:
+      labels:
+        app: hello-grpc
+    spec:
+      containers:
+      - name: hello-grpc
+        image: pmakhnatch/hello-grpc
+        ports:
+        - containerPort: 8080

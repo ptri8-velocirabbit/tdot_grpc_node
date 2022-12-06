@@ -8,7 +8,7 @@ import { TodoRequest } from './proto/randomPackage/TodoRequest'
 import { ChatRequest } from './proto/randomPackage/ChatRequest'
 import { ChatResponse } from './proto/randomPackage/ChatResponse'
 
-const PORT = 8082
+const PORT = 8080
 const PROTO_FILE = './proto/random.proto'
 
 const packageDef = protoLoader.loadSync(path.resolve(__dirname, PROTO_FILE))
