@@ -54,7 +54,7 @@ function getServer() {
       let runCount = 0;
       const id = setInterval(() => {
         runCount = ++runCount;
-        call.write({ num: Math.floor(Math.random() * maxVal) });
+        call.write({ num: runCount });
 
         if (runCount >= 10) {
           clearInterval(id);
