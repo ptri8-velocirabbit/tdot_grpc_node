@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-rangen-client-deployment
+  labels:
+    app: grpc-rangen-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-rangen-client
+  template:
+    metadata:
+      labels:
+        app: grpc-rangen-client
+    spec:
+      containers:
+        - name: grpc-rangen-client
+          image: pmakhnatch/client-rangen
+          ports:
+            - containerPort: 8080

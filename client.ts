@@ -4,7 +4,7 @@ import * as protoLoader from "@grpc/proto-loader";
 import { ProtoGrpcType } from "./proto/random";
 import readline from "readline";
 
-const PORT = 50400;
+const PORT = 8080;
 const PROTO_FILE = "./proto/random.proto";
 
 const packageDef = protoLoader.loadSync(path.resolve(__dirname, PROTO_FILE));
@@ -13,7 +13,7 @@ const grpcObj = grpc.loadPackageDefinition(
 ) as unknown as ProtoGrpcType;
 
 const client = new grpcObj.randomPackage.Random(
-  `127.0.0.1:${PORT}`,
+  `grpc-pingpong-service:${PORT}`,
   grpc.credentials.createInsecure()
 );
 
