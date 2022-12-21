@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: grpc-pingpong
-          image: clam2718/grpc-pingpong
+          image: drawnoutt/roger_rangen
           ports:
             - containerPort: 8080

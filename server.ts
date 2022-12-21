@@ -48,7 +48,7 @@ function getServer() {
       res(null, { message: 'Pong' });
     },
     RandomNumbers: (call) => {
-      const MAX_RUN = 100;
+      const MAX_RUN = 5;
       const { maxVal = 10 } = call.request;
       console.log({ maxVal });
 
