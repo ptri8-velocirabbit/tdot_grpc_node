@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: grpc-rangen-client-deployment
   labels:
-    app: grpc-rangen-client
+    app: grpc-client-rangen
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: grpc-rangen-client
+      app: grpc-client-rangen
   template:
     metadata:
       labels:
-        app: grpc-rangen-client
+        app: grpc-client-rangen
     spec:
       containers:
-        - name: grpc-rangen-client
-          image: pmakhnatch/client-rangen
+        - name: grpc-client-rangen
+          image: ptrigr8/grpc-client-rangen
           ports:
             - containerPort: 8080
