@@ -8,6 +8,7 @@ import { TodoRequest } from "./proto/randomPackage/TodoRequest";
 import { ChatRequest } from "./proto/randomPackage/ChatRequest";
 import { ChatResponse } from "./proto/randomPackage/ChatResponse";
 
+
 const PORT = 8080;
 const PROTO_FILE = "./proto/random.proto";
 
