@@ -7,6 +7,8 @@ import { TodoResponse } from './proto/randomPackage/TodoResponse';
 import { TodoRequest } from './proto/randomPackage/TodoRequest';
 import { ChatRequest } from './proto/randomPackage/ChatRequest';
 import { ChatResponse } from './proto/randomPackage/ChatResponse';
+import * as grpcJsXds from '@grpc/grpc-js-xds';
+grpcJsXds.register();
 
 
 const PORT = 8080;
