@@ -7,18 +7,19 @@ import { TodoResponse } from './proto/randomPackage/TodoResponse';
 import { TodoRequest } from './proto/randomPackage/TodoRequest';
 import { ChatRequest } from './proto/randomPackage/ChatRequest';
 import { ChatResponse } from './proto/randomPackage/ChatResponse';
-import * as grpcJsXds from '@grpc/grpc-js-xds';
-grpcJsXds.register();
+
 
 
 const PORT = 8080;
 const PROTO_FILE = './proto/random.proto';
+
 
 const packageDef = protoLoader.loadSync(path.resolve(__dirname, PROTO_FILE));
 const grpcObj = grpc.loadPackageDefinition(
   packageDef
 ) as unknown as ProtoGrpcType;
 const randomPackage = grpcObj.randomPackage;
+
 
 function main() {
   const server = getServer();
