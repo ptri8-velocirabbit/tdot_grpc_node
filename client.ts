@@ -4,7 +4,7 @@ import * as protoLoader from '@grpc/proto-loader';
 import { ProtoGrpcType } from './proto/random';
 import readline from 'readline';
 
-const PORT = 31110;
+const PORT = 8080;
 const PROTO_FILE = './proto/random.proto';
 
 const packageDef = protoLoader.loadSync(path.resolve(__dirname, PROTO_FILE));
@@ -13,7 +13,7 @@ const grpcObj = grpc.loadPackageDefinition(
 ) as unknown as ProtoGrpcType;
 
 const client = new grpcObj.randomPackage.Random(
-  `10.98.168.119:${PORT}`,
+  `0.0.0.0:${PORT}`,
   grpc.credentials.createInsecure()
 );
 // 12:00:00 01/01/01 => 9999991 + 5 > setseconds > 12:00:05 ...
