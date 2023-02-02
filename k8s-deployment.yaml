@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-pingpong-deployment
+  labels:
+    app: grpc-pingpong-server2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-pingpong-server2
+  template:
+    metadata:
+      labels:
+        app: grpc-pingpong-server2
+    spec:
+      containers:
+        - name: grpc-pingpong-server2
+          image: ptrigr8/grpc-server-rangen
+          ports:
+            - containerPort: 8080
